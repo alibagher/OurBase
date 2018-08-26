@@ -18,7 +18,7 @@ export default class Login extends Component {
     return (
       <ScrollView style={{
         flex: 1, alignSelf: 'stretch', 
-        paddingTop: 100,
+        paddingTop: 80,
         backgroundColor: '#79DBDE'}}>
         <View style={styles.Rectangle2}>
           
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignSelf: 'center',
     marginTop: 26,
-    width: 262,
+    width: 270,
     alignItems: 'center',
     justifyContent: 'center'
   },

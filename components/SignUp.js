@@ -18,28 +18,59 @@ export default class SignUp extends Component {
     return (
       <ScrollView style={{
         flex: 1, alignSelf: 'stretch', 
-        paddingTop: 20,
+        paddingTop: 120,
         backgroundColor: '#ffffff'}}>
-        <View style={{width: 272, alignItems:'center'}}>
+        
           <Image source={logo} style={styles.logo} />
+          
           <Text style={styles.SignUp}>Sign Up</Text>
-          <View style={styles.RectangleCopy10}>
-            <Text style={styles.Email}>E-mail</Text>
+          
+          
+          <View style={styles.E_mail}>
+            <TextInput 
+              keyboardType={"email-address"}
+              placeholder="E-Mail"
+              placeholderTextColor="#ceb381"
+              style={{height: 50, width: 275, borderRadius: 10, paddingLeft: 20}}
+              onChangeText={(text) => this.setState({text})}
+            />
           </View>
-          <View style={styles.RectangleCopy8}>
-            <Text style={styles.UsernameCopy}>Username</Text>
+
+          <View style={styles.UserN}>
+            <TextInput 
+              keyboardType={"default"}
+              placeholder="UserName"
+              placeholderTextColor="#ceb381"
+              style={{height: 50, width: 275, borderRadius: 10, paddingLeft: 20}}
+              onChangeText={(text) => this.setState({text})}
+            />
           </View>
-          <View style={styles.RectangleCopy9}>
-            <Text style={styles.PasswordCopy}>Password</Text>
+
+          <View style={styles.Pass}>
+            <TextInput 
+              keyboardType={"default"}
+              placeholder="UserName"
+              placeholderTextColor="#ceb381"
+              style={{height: 50, width: 275, borderRadius: 10, paddingLeft: 20}}
+              onChangeText={(text) => this.setState({text})}
+            />
           </View>
-          <View style={styles.RectangleCopy5}>
+
+          <TouchableOpacity style={styles.RectangleCopy5}>
             <Text style={styles.Done}>Done!</Text>
-          </View>
+          </TouchableOpacity>
+
           <Text style={styles.Alreadyhaveabase}>
             <Text>Already have a base? </Text>{'\n'}
-            <Text>Sign In</Text>{'\n'}
+            <TouchableOpacity
+              onPress={() => 
+                this.props.navigation.navigate('LoginNav')
+              }
+              >
+              <Text style={styles.Lookingtogetupaa}>Sign In</Text>
+            </TouchableOpacity>{'\n'}
           </Text>
-        </View>
+        
       </ScrollView>
     )
   }
@@ -59,63 +90,61 @@ const styles = StyleSheet.create({
     marginTop: 85,
     textAlign: 'center'
   },
-  RectangleCopy10: {
+  E_mail: {
     height: 47,
     backgroundColor: '#FFF6E5',
     borderRadius: 8,
     alignSelf: 'center',
     marginTop: 13,
+    fontSize: 18,
     width: 262,
     alignItems: 'center',
-    marginLeft: 25,
     justifyContent: 'center'
   },
-  Email: {
-    backgroundColor: 'transparent',
-    fontSize: 18,
-    fontWeight: 'normal',
-    color: '#CEB381',
-    textAlign: 'left',
-    marginLeft: 25
-  },
-  RectangleCopy8: {
+  // Email: {
+  //   backgroundColor: 'transparent',
+  //   fontSize: 18,
+  //   fontWeight: 'normal',
+  //   color: '#CEB381',
+  //   textAlign: 'left',
+  //   marginLeft: 25
+  // },
+  UserN: {
     height: 47,
     backgroundColor: '#FFF6E5',
     borderRadius: 8,
     alignSelf: 'center',
     marginTop: 7,
     width: 262,
-    alignItems: 'flex-start',
-    marginLeft: 25,
+    alignItems: 'center',
     justifyContent: 'center'
   },
-  UsernameCopy: {
-    backgroundColor: 'transparent',
-    fontSize: 18,
-    fontWeight: 'normal',
-    color: '#CEB381',
-    textAlign: 'left',
-    marginLeft: 25
-  },
-  RectangleCopy9: {
+  // UsernameCopy: {
+  //   backgroundColor: 'transparent',
+  //   fontSize: 18,
+  //   fontWeight: 'normal',
+  //   color: '#CEB381',
+  //   textAlign: 'left',
+  //   marginLeft: 25
+  // },
+  Pass: {
     height: 47,
     backgroundColor: '#FFF6E5',
     borderRadius: 8,
     alignSelf: 'center',
     marginTop: 7,
     width: 262,
-    alignItems: 'flex-start',
-    marginLeft: 25,
+    alignItems: 'center',
     justifyContent: 'center'
   },
-  PasswordCopy: {
-    backgroundColor: 'transparent',
-    fontSize: 18,
-    fontWeight: 'normal',
-    color: '#CEB381',
-    textAlign: 'left',
-    marginLeft: 25
-  },
+  // PasswordCopy: {
+  //   backgroundColor: 'transparent',
+  //   fontSize: 18,
+  //   fontWeight: 'normal',
+  //   color: '#CEB381',
+  //   textAlign: 'left',
+  //   marginLeft: 25
+  // },
   RectangleCopy5: {
     height: 47,
     backgroundColor: '#F9736F',
@@ -137,9 +166,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     fontSize: 12,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
     alignSelf: 'center',
     marginTop: 9,
     textAlign: 'center'
+  },
+  Lookingtogetupaa: {
+    backgroundColor: 'transparent',
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: 'red',
+    marginTop: 9,
+    textDecorationLine: 'underline'
   }
 })
