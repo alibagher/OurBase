@@ -28,16 +28,21 @@ const styles = StyleSheet.create({
 
 import { createStackNavigator } from 'react-navigation';
 
+
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import Splash from './components/Splash';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Html from './components/htmlTest'
+
 
 
 console.disableYellowBox = true;
 
-class App extends Component{
+
+
+ class App extends Component{
   constructor(props) {
     super(props);
     this.state = { currentScreen: 'Splash' };
@@ -45,6 +50,7 @@ class App extends Component{
       this.setState({ currentScreen: 'Login' })
     }, 500)
   }
+  
   render() {
     const { currentScreen } = this.state
     let mainScreen = currentScreen === 'Splash' ? <Splash /> : <Login />
@@ -57,5 +63,14 @@ export default createStackNavigator({
   SignUpNav: { screen: SignUp },
 });
 
+/*
+export default class App extends Component{
+  render() {
+    return (
+      <Html />
+    );
+  }
+}
+*/
 
 AppRegistry.registerComponent('OurBase', () => App);
